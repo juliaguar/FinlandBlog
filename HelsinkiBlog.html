@@ -1,0 +1,118 @@
+<head>
+  <title>HelsinkiBlog</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+</head>
+
+ <body>
+
+  <div class="container">
+    <div class="hero-unit">
+      <div class="row">
+        <div class="span6 maintext">
+          <h1> Finlandia</h1> 
+          <h3> Bienvenido a Finlandia. </h3>
+        </div>
+        </div>
+      </div>
+  </div>
+
+   <div class="moretext span6">
+
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active"><a href="#inicio" data-toggle="tab">Inicio</a></li>
+      <li><a href="#helsinki" data-toggle="tab">Helsinki</a></li>
+      <li><a href="#turku" data-toggle="tab">Turku</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="inicio">
+          <h2>Hola Lew, qué tal?</h2>
+          
+          <p> Quiero contarte con mis fotos que pasa en mi vida y quiero que también puedas ver este pais tan lindo. En este página puedes ver unas fotos y leer unos cuentitos de Helsinki y de otros ciudades en Finlandia... </p>
+          <div>
+            <img src="http://distilleryimage8.s3.amazonaws.com/3c774824ba6e11e2a32722000aa800c4_7.jpg">
+          </div>
+
+          <p>La bandera de Finlandia.</p>
+          <div>
+            <img src="https://lh5.googleusercontent.com/-4agavHxv0AI/UZB-SzkT8MI/AAAAAAAAAwI/CGzMjAQ_qa0/w739-h554-no/2013-05-10+20.44.13.jpg">
+          </div>
+
+      </div>
+
+      <div class="tab-pane" id="helsinki">
+
+          <p>Bienvenido a la capital de Finlandia, Helsinki. En Helsinki ha pasado ya tanto que no te puedo contar de todo. Pero aquí tienes alguanas impresiones de la ciudad.</p>
+
+          <h2>La costa</h2>
+          <p>La puesta del sol. La playa cerca de mi casa. </p>
+          <div>
+            <img src="http://distilleryimage8.s3.amazonaws.com/e9195440b93911e2b07922000a1fbd9b_7.jpg">
+          </div>
+
+          <p>Mismo lugar, otra foto. </p>
+          <div>
+            <img src="http://distilleryimage9.s3.amazonaws.com/9d1c1edabb2b11e299e522000a9e28c4_7.jpg">
+          </div>
+
+          <p>La costa de Helsinki.</p>
+          <div>
+            <img src="https://lh3.googleusercontent.com/-0gim4VsRsvo/UX6w3vZAdyI/AAAAAAAAAow/icu7z3yhFaI/w739-h554-no/2013-04-25+20.38.10.jpg">
+          </div>
+
+          <h2>carcél hotel</h2>
+          <p>En esta foto puedes ver el interior de una casa. Hoy en día es un hotel pero antes era una carcél.</p>
+          <div>
+            <img src="https://helsinki-zixuxa.backliftapp.com/app/images/jail.jpg">
+          </div>
+
+      </div>
+      
+      <div class="tab-pane" id="turku">
+
+        <p>Hace muchos años Turku era la capital de Finlandia. Hoy en día Helsinki es la capital. Nuestro viaje a Turku empezaba en la estación del tren en Helsinki. Fuimos en tren hasta Turku. Llegábamos en Turku a las once. Ahí teníamos todavía una hora para buscar el lugar donde nos encontrábamos con otros estudiantes de intercambio. Primero fuimos al centro, porque teníamos todavía tanto tiempo. Después de media hora caminando fuimos al lugar donde estaban los otros. Comíamos juntos. Después empezaba un seminario. Hablábamos del proyecto que se llama "Erasmus in Schools". Es un proyecto para estudiantes de intercambio. En el proyecto los estudiantes tienen la oportunidad de visitar escuelas y contar los estudiantes finlandeses de sus países. 
+        Bueno. Después del seminario fuimos al hotel. Teníamos una hora de tiempo libre. Fuimos al río. Era muy bonito :). En la tarde fuimos juntos con los otros en una barca a un lugar cerca de Turku. Se llama Naantali. </p> 
+
+        <p>Un puente cerca de Naantali.</p>
+        <img src="https://lh3.googleusercontent.com/-HTxL4ABhWfI/UZCHDDDh31I/AAAAAAAAAxs/PDv4FGzzxeE/w556-h554-no/photo.jpg">
+
+        <p> Cuando volvíamos al hotel estaba ya cansada. El próximo día desayunabamos en el hotel y después volvíamos en tren a Helsinki. Antes de ir a la estación fiumos otra vez a la ciudad a ver la catedral de Turku.</p>
+        
+        <p>La catedral de Turku.</p>
+        <img src="https://lh5.googleusercontent.com/-7TJx7Iop5HQ/UZCGNaZ-zTI/AAAAAAAAAxc/QEF9UdbTPjY/w556-h554-no/photo.jpg">
+      
+      </div>
+
+    {{> commentssection}}
+    
+    </div>
+  </div>
+
+    <script>
+      $(function () {
+        $('#myTab a:last').tab('show');
+      })
+    </script>
+
+ </body>
+
+<template name="commentssection">
+  <div class='content'>
+    <h3>comentarios</h3>
+      <form class="commentform">
+        <div class="input-append">
+          <input class="span4" id="content" type="text">
+          <input class="btn" type="submit">publicar</input>
+        </div>
+      </form>
+   {{#each comments}}
+      <div class='comment'>  
+        <div>{{dateString}}</div>
+        <div>{{content}}</div>
+    </div>
+    {{/each}}
+  </div>
+</template>
